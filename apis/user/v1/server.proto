@@ -1,0 +1,17 @@
+syntax = "proto3";
+package user.v1;
+
+import "google/api/annotations.proto";
+import "user/v1/message.proto";
+
+option go_package = "apis/go/user/v1;user";
+
+service UserService {
+  // 创建日志下载任务
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {
+    option (google.api.http) = {
+      post: "/v1/user/create"
+      body: "*"
+    };
+  }
+}

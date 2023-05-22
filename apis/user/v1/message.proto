@@ -1,0 +1,14 @@
+syntax = "proto3";
+package user.v1;
+
+option go_package = "apis/go/user/v1;user";
+
+message CreateUserRequest {
+  string name = 1;
+  string pwd = 2;
+}
+
+message CreateUserResponse {
+  int32 code = 1;
+  string message = 2;
+}
